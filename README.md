@@ -1,2 +1,2 @@
-# JUMIA_web_scraping_script
-Web scraping for tunisian jumia website 
+# JUMIA web scraping script : 
+this script was made with BeautifulSoup.
