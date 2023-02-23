@@ -1,4 +1,4 @@
-#Getting libreris
+#Importing libraries :
 from time import sleep
 from urllib import request
 from bs4 import BeautifulSoup as bs
@@ -6,7 +6,7 @@ import requests
 import pandas as pd
 import sys
 import lxml
-#The fonction de scrap the data
+#The Main function to scrape data : 
 def scraper(urls):
     name = []
     price = []
@@ -112,7 +112,7 @@ def get_cat(class_name,all_urls):
     #Looping over the cataloges
     for sub in all_subs_cat:
         try:
-        # Getting the link of cataloge ex : href="jumia.com.tn/epicerie/"
+        # Getting the link of categories ex : href="jumia.com.tn/epicerie/"
             url = website + sub["href"]
         #Getting the respond and evoiding the limit of requests using sleep(5)
         except:
@@ -159,7 +159,7 @@ def get_hidden_cat(urls, all_urls):
               sleep(5)
               continue
           sub_soup = bs(res.content, "lxml")
-            #Looping over the categoris of other categories
+            #Looping over the categoris of other categories :
           sub_cats = sub_soup.find_all("a", attrs={"class", "-db -pvs -phxl -hov-bg-gy05"})
           for sub_cat in sub_cats:
               all_urls.append(sub_cat["href"])
